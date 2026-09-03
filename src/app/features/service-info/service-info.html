@@ -22,13 +22,13 @@
         <h3>Endereço</h3>
         <p class="atendimento__endereco">
           {{ loja.endereco.logradouro }}<br />
-          {{ loja.endereco.bairro }}
+          {{ loja.endereco.bairro }} — {{ loja.endereco.cidadeEstado }}<br />
+          CEP {{ loja.endereco.cep }}
         </p>
-        <p class="atendimento__nota">
-          <!-- TROCAR: assim que o endereço definitivo estiver disponível, atualize `loja.config.ts` e, se
-               quiser, troque este parágrafo por um link/mapa incorporado. -->
-          Endereço exato em breve — siga {{ loja.instagram.usuario }} para o anúncio completo.
-        </p>
+        <a class="atendimento__mapa" [href]="loja.endereco.linkMapa" target="_blank" rel="noopener noreferrer">
+          Ver no mapa
+          <span class="sr-only">(abre em nova aba)</span>
+        </a>
       </div>
 
       <div class="atendimento__card cartao" mkReveal [mkRevealDelay]="180">

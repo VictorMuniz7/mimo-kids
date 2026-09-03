@@ -34,12 +34,13 @@ export const LOJA_CONFIG = {
     urlBase: 'https://wa.me/5544988122940',
   },
 
-  // TROCAR: endereço exato da loja (rua, número, bairro, CEP) assim que fechado o ponto comercial.
   endereco: {
-    logradouro: 'Endereço a confirmar',
-    bairro: 'Sarandi/PR',
-    cep: '',
-    linkMapa: '',
+    logradouro: 'Rua Pedro Galindo Garcia, 535',
+    bairro: 'Centro',
+    cidadeEstado: 'Sarandi/PR',
+    cep: '87111-210',
+    linkMapa:
+      'https://www.google.com/maps/search/?api=1&query=Rua+Pedro+Galindo+Garcia%2C+535%2C+Centro%2C+Sarandi+-+PR%2C+87111-210',
   },
 
   // TROCAR: horário de funcionamento definitivo da loja.

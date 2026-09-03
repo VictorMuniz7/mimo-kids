@@ -38,10 +38,18 @@
   margin-bottom: 0.5rem;
 }
 
-.atendimento__nota {
-  font-size: 0.9rem;
-  color: var(--mk-texto-suave);
-  margin: 0;
+.atendimento__mapa {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 700;
+  color: var(--mk-rosa-texto);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: var(--mk-rosa-forte);
+  }
 }
 
 .atendimento__pagamentos li {

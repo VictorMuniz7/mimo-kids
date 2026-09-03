@@ -20,7 +20,7 @@ export class SeoService {
     // pronta do prerender/SSR).
     if (this.document.head.querySelector('script[type="application/ld+json"]')) return;
 
-    const { seo, nome, cidadeEstado, whatsapp, instagram } = LOJA_CONFIG;
+    const { seo, nome, cidadeEstado, whatsapp, instagram, endereco } = LOJA_CONFIG;
 
     this.titleService.setTitle(seo.titulo);
 
@@ -56,6 +56,8 @@ export class SeoService {
       telephone: `+${whatsapp.numero}`,
       address: {
         '@type': 'PostalAddress',
+        streetAddress: `${endereco.logradouro}, ${endereco.bairro}`,
+        postalCode: endereco.cep,
         addressLocality: LOJA_CONFIG.cidade,
         addressRegion: LOJA_CONFIG.estado,
         addressCountry: 'BR',
