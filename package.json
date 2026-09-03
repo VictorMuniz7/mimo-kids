@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "postbuild": "node scripts/inject-font-preload.mjs && node scripts/apply-csp-hashes.mjs",
+    "build:gh-pages": "ng build --base-href /mimo-kids/ && npm run postbuild",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:mimo-kids": "node dist/mimo-kids/server/server.mjs"
@@ -20,6 +22,7 @@
     "@angular/platform-server": "^22.1.0",
     "@angular/router": "^22.1.0",
     "@angular/ssr": "^22.1.7",
+    "animejs": "^4.5.0",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
@@ -31,6 +34,7 @@
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
     "prettier": "^3.8.1",
+    "sharp": "^0.35.4",
     "typescript": "~6.0.2"
   }
 }

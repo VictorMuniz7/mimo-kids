@@ -1,0 +1,111 @@
+:host {
+  display: block;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(2rem, 5vw, 3.5rem) clamp(3rem, 7vw, 5rem);
+  background: linear-gradient(180deg, var(--mk-creme-2) 0%, var(--mk-creme) 60%);
+}
+
+.hero__waves {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: var(--mk-z-ornamento);
+}
+
+.hero__star-wrap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.hero__star-thread {
+  width: 2px;
+  height: clamp(28px, 5vw, 46px);
+  background: repeating-linear-gradient(to bottom, var(--mk-texto-suave) 0 4px, transparent 4px 8px);
+  opacity: 0.6;
+}
+
+.hero__star {
+  display: block;
+  transform-origin: top center;
+}
+
+@media (max-width: 480px) {
+  .hero__star-wrap {
+    transform: translateX(-50%) scale(0.8);
+  }
+}
+
+.hero__inner {
+  position: relative;
+  z-index: var(--mk-z-conteudo);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.1rem;
+  /* Espaço suficiente para a estrelinha pendurada (.hero__star-wrap, absoluta,
+     ancorada no topo da seção) nunca sobrepor a fita "Em breve". */
+  padding-top: clamp(4.5rem, 10vw, 5.5rem);
+}
+
+.hero__ribbon {
+  display: inline-flex;
+}
+
+.hero__ribbon-letter {
+  display: inline-block;
+  white-space: pre;
+}
+
+.hero__logo-heading {
+  margin: 0;
+  line-height: 0;
+}
+
+.hero__logo-img {
+  width: clamp(230px, 34vw, 420px);
+  height: auto;
+}
+
+.hero__subtitle {
+  font-family: var(--mk-fonte-titulo);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 0.95rem + 0.7vw, 1.5rem);
+  color: var(--mk-azul-texto);
+  margin: 0;
+  max-width: 32ch;
+}
+
+.hero__countdown-wrap {
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__em-breve {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0;
+  font-weight: 600;
+  color: var(--mk-texto);
+  max-width: 42ch;
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+  margin-top: 0.4rem;
+}

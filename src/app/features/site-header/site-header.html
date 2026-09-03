@@ -1,0 +1,49 @@
+<header class="site-header" [class.site-header--scrolled]="scrolled()">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="#hero" (click)="onNavClick($event, 'hero')">
+      <img
+        class="site-header__logo"
+        src="assets/img/logo-mimo-kids-480.webp"
+        width="160"
+        height="141"
+        alt="Mimo Kids — moda infantil, RN aos 12 anos"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+
+    <nav class="site-header__nav" [class.is-open]="menuOpen()" aria-label="Navegação principal" id="site-nav">
+      <ul>
+        @for (link of navLinks; track link.href) {
+          <li>
+            <a [href]="'#' + link.href" (click)="onNavClick($event, link.href)">{{ link.label }}</a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <a
+      class="botao botao--whatsapp mk-squash site-header__cta"
+      [href]="whatsappUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar no WhatsApp (abre em nova aba)"
+    >
+      <mk-icon-whatsapp [size]="20" />
+      <span class="site-header__cta-label" aria-hidden="true">Falar no WhatsApp</span>
+    </a>
+
+    <button
+      type="button"
+      class="site-header__burger"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="site-nav"
+      [attr.aria-label]="menuOpen() ? 'Fechar menu' : 'Abrir menu'"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>

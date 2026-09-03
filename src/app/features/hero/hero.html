@@ -1,0 +1,75 @@
+<section id="hero" class="hero">
+  <div class="hero__waves">
+    <mk-wave-divider class="hero__wave" color="--mk-rosa-claro" edge="top" [height]="120" />
+  </div>
+
+  <mk-confetti-layer />
+
+  <div class="hero__star-wrap">
+    <span class="hero__star-thread"></span>
+    <span class="hero__star" mkLoop="pendulum">
+      <mk-star-mascot [size]="72" />
+    </span>
+  </div>
+
+  <div class="container hero__inner">
+    <span class="fita hero__ribbon" role="group" aria-label="Em breve em Sarandi!">
+      @for (letra of ribbonLetters; track $index) {
+        <span class="hero__ribbon-letter" aria-hidden="true">{{ letra === ' ' ? ' ' : letra }}</span>
+      }
+    </span>
+
+    <h1 class="hero__logo-heading">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="assets/img/logo-mimo-kids-320.webp 320w, assets/img/logo-mimo-kids-480.webp 480w, assets/img/logo-mimo-kids-960.webp 960w"
+          sizes="(max-width: 640px) 260px, 420px"
+        />
+        <img
+          class="hero__logo-img"
+          src="assets/img/logo-mimo-kids-480.webp"
+          width="1708"
+          height="1505"
+          alt="Mimo Kids — moda infantil completa, do recém-nascido aos 12 anos"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+        />
+      </picture>
+    </h1>
+
+    <p class="hero__subtitle">Moda infantil completa — do RN aos 12 anos</p>
+
+    <div class="hero__countdown-wrap">
+      @if (dataInauguracao) {
+        <app-countdown-timer [dataAlvo]="dataInauguracao" />
+      } @else {
+        <p class="hero__em-breve"><mk-heart [size]="16" color="--mk-coral" /> A data de inauguração ainda não foi definida — fique de olho no nosso Instagram!</p>
+      }
+    </div>
+
+    <div class="hero__ctas">
+      <a
+        class="botao botao--whatsapp mk-squash"
+        [href]="whatsappUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar no WhatsApp (abre em nova aba)"
+      >
+        <mk-icon-whatsapp [size]="20" />
+        Falar no WhatsApp
+      </a>
+      <a
+        class="botao botao--instagram mk-squash"
+        [href]="loja.instagram.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Seguir no Instagram (abre em nova aba)"
+      >
+        <mk-icon-instagram [size]="20" />
+        Seguir no Instagram
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,13 +1,53 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>MimoKids</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mimo Kids</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--
+      CSP restritiva de exemplo. `script-src` recebe os hashes exatos dos
+      scripts inline do próprio Angular (hidratação/event-replay) automaticamente
+      via `scripts/apply-csp-hashes.mjs`, rodado como `postbuild` — não edite os
+      hashes à mão, eles são recalculados a cada build. `frame-ancestors` não
+      funciona em <meta> (só em cabeçalho HTTP), por isso não está aqui — ver
+      README > Segurança para os cabeçalhos recomendados no servidor/CDN,
+      incluindo `frame-ancestors` e a própria CSP (mais forte via header).
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
+    />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#fdf4e6" />
+
+    <!--
+      Fontes críticas auto-hospedadas: pré-carregadas para evitar FOIT/CLS no
+      texto acima da dobra. O build processa os .woff2 como assets do CSS
+      (nome com hash, em /media/) para funcionar tanto na raiz quanto num
+      subcaminho (ex.: GitHub Pages) — por isso os <link rel="preload"> não
+      podem ter um href fixo aqui. O passo `postbuild`
+      (`scripts/inject-font-preload.mjs`) troca este marcador pelos links com
+      o hash real de cada build.
+    -->
+    <!-- FONT_PRELOADS -->
+
+  </head>
+  <body>
+    <app-root></app-root>
+    <noscript>
+      <style>
+        .mk-reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+  </body>
 </html>

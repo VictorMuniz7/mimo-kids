@@ -1,0 +1,49 @@
+<section id="atendimento" class="secao atendimento" aria-labelledby="atendimento-titulo">
+  <div class="container">
+    <div class="secao__titulo" mkReveal>
+      <h2 id="atendimento-titulo">Um atendimento tão carinhoso quanto a nossa loja</h2>
+      <p>Assim que abrirmos as portas em {{ loja.cidadeEstado }}, é isso que vai te esperar por aqui:</p>
+    </div>
+
+    <div class="atendimento__grade">
+      <div class="atendimento__card cartao" mkReveal>
+        <h3>Horário de funcionamento</h3>
+        <ul>
+          @for (item of loja.horarios; track item.dias) {
+            <li>
+              <mk-heart [size]="14" color="--mk-coral" />
+              <span><strong>{{ item.dias }}:</strong> {{ item.horario }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="atendimento__card cartao" mkReveal [mkRevealDelay]="90">
+        <h3>Endereço</h3>
+        <p class="atendimento__endereco">
+          {{ loja.endereco.logradouro }}<br />
+          {{ loja.endereco.bairro }}
+        </p>
+        <p class="atendimento__nota">
+          <!-- TROCAR: assim que o endereço definitivo estiver disponível, atualize `loja.config.ts` e, se
+               quiser, troque este parágrafo por um link/mapa incorporado. -->
+          Endereço exato em breve — siga {{ loja.instagram.usuario }} para o anúncio completo.
+        </p>
+      </div>
+
+      <div class="atendimento__card cartao" mkReveal [mkRevealDelay]="180">
+        <h3>Formas de pagamento</h3>
+        <ul class="atendimento__pagamentos">
+          @for (forma of loja.formasPagamento; track forma.label) {
+            <li>{{ forma.label }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <p class="atendimento__convite" mkReveal [mkRevealDelay]="240">
+      Mais do que vender, queremos te conhecer — venha bater um papo, tirar dúvidas e sentir de perto o carinho que
+      colocamos em cada detalhe da Mimo Kids.
+    </p>
+  </div>
+</section>

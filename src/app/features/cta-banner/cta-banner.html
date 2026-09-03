@@ -1,0 +1,30 @@
+<section class="cta-final" aria-labelledby="cta-final-titulo">
+  <mk-confetti-layer />
+  <div class="container cta-final__inner" mkReveal>
+    <h2 id="cta-final-titulo">Tudo o que seu pequeno precisa em um só lugar!</h2>
+    <p>Fica pertinho de você, em {{ loja.cidadeEstado }}. Chama a gente e vem fazer parte dessa novidade.</p>
+
+    <div class="cta-final__botoes">
+      <a
+        class="botao botao--whatsapp mk-squash"
+        [href]="whatsappUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar no WhatsApp (abre em nova aba)"
+      >
+        <mk-icon-whatsapp [size]="22" />
+        Falar no WhatsApp
+      </a>
+      <a
+        class="botao botao--contorno mk-squash"
+        [href]="loja.instagram.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Seguir no Instagram (abre em nova aba)"
+      >
+        <mk-icon-instagram [size]="22" />
+        {{ loja.instagram.usuario }}
+      </a>
+    </div>
+  </div>
+</section>

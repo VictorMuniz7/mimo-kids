@@ -1,0 +1,23 @@
+<section id="encontra-aqui" class="secao encontra" aria-labelledby="encontra-titulo">
+  <div class="container">
+    <div class="secao__titulo" mkReveal>
+      <h2 id="encontra-titulo">Aqui tem tudo que seu pequeno precisa!</h2>
+      <p>Tudo o que seu pequeno precisa em um só lugar 💛</p>
+    </div>
+
+    <ul class="encontra__grade">
+      @for (categoria of categorias; track categoria.titulo; let i = $index) {
+        <li class="encontra__card cartao mk-squash" mkReveal [mkRevealDelay]="i * 70">
+          <mk-category-icon [kind]="categoria.kind" [color]="categoria.cor" [size]="64" />
+          <span class="encontra__card-titulo">{{ categoria.titulo }}</span>
+          <span class="encontra__card-detalhe">{{ categoria.detalhe }}</span>
+        </li>
+      }
+      <li class="encontra__card encontra__card--mais cartao mk-squash" mkReveal [mkRevealDelay]="categorias.length * 70">
+        <mk-category-icon kind="mais" color="--mk-coral" [size]="64" />
+        <span class="encontra__card-titulo">E muito mais!</span>
+        <span class="encontra__card-detalhe">Venha conferir de pertinho</span>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,105 @@
+// Classes utilitárias reaproveitadas por várias seções: botões, fitas, molduras.
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  min-height: 44px;
+  padding: 0.9em 1.7em;
+  border-radius: 999px;
+  border: none;
+  font-family: var(--mk-fonte-titulo);
+  font-weight: 700;
+  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
+  text-decoration: none;
+  cursor: pointer;
+  transform: translateZ(0);
+  transition:
+    transform var(--mk-duracao-curta) ease,
+    box-shadow var(--mk-duracao-curta) ease,
+    filter var(--mk-duracao-curta) ease;
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  svg {
+    width: 1.3em;
+    height: 1.3em;
+    flex-shrink: 0;
+  }
+}
+
+.botao--whatsapp {
+  background: var(--mk-verde-forte);
+  color: #fff;
+  box-shadow: var(--mk-sombra-azul);
+}
+
+.botao--instagram {
+  background: var(--mk-rosa-forte);
+  color: #fff;
+  box-shadow: var(--mk-sombra-rosa);
+}
+
+.botao--contorno {
+  background: var(--mk-branco);
+  color: var(--mk-rosa-texto);
+  border: 2px solid var(--mk-rosa);
+}
+
+.fita {
+  display: inline-block;
+  position: relative;
+  padding: 0.55em 1.6em;
+  background: var(--mk-rosa-forte);
+  color: #fff;
+  font-family: var(--mk-fonte-titulo);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: clamp(0.85rem, 0.8rem + 0.2vw, 1rem);
+  border-radius: 999px;
+  box-shadow: var(--mk-sombra-rosa);
+}
+
+.moldura-tracejada {
+  position: relative;
+  border: 3px dashed var(--mk-rosa);
+  border-radius: 2rem;
+  background: var(--mk-branco);
+}
+
+.cartao {
+  background: var(--mk-branco);
+  border-radius: 1.75rem;
+  box-shadow: var(--mk-sombra-suave);
+}
+
+.chip-cor {
+  &--rosa {
+    background: var(--mk-rosa-claro);
+  }
+  &--azul {
+    background: var(--mk-azul);
+  }
+  &--amarelo {
+    background: var(--mk-amarelo);
+  }
+  &--laranja {
+    background: var(--mk-laranja);
+  }
+  &--verde {
+    background: var(--mk-verde);
+  }
+  &--lilas {
+    background: var(--mk-lilas);
+  }
+  &--coral {
+    background: var(--mk-coral);
+  }
+}

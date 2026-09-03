@@ -1,0 +1,62 @@
+// Design tokens — Mimo Kids
+// Paleta extraída da logo oficial e do flyer-modelo (identidade visual da marca),
+// refinada para garantir contraste AA em todas as combinações texto/fundo usadas
+// no site (ver scripts/contrast-check.mjs).
+:root {
+  // Fundo
+  --mk-creme: #fdf4e6;
+  --mk-creme-2: #fff9f0;
+  --mk-branco: #ffffff;
+
+  // Tons pastel — ondas, blobs, círculos de ícone, molduras (uso decorativo/fundo)
+  --mk-rosa-claro: #fbb6c9;
+  --mk-rosa: #ee6d8c;
+  --mk-azul: #92c9ea;
+  --mk-amarelo: #f8c144;
+  --mk-laranja: #f5a445;
+  --mk-verde: #8cc474;
+  --mk-lilas: #b79bd9;
+  --mk-coral: #f27a6e;
+
+  // Tons "fortes" — preenchimento sólido de botões/fitas que recebem texto branco
+  --mk-rosa-forte: #c23d66;
+  --mk-verde-forte: #1e7a45;
+
+  // Variantes escurecidas — uso exclusivo em TEXTO sobre creme/branco (AA garantido)
+  --mk-rosa-texto: #c23d66;
+  --mk-azul-texto: #256e9c;
+  --mk-amarelo-texto: #8a6512;
+  --mk-laranja-texto: #a05a12;
+  --mk-verde-texto: #4c7a34;
+  --mk-lilas-texto: #6b4b96;
+  --mk-coral-texto: #c34534;
+
+  // Texto
+  --mk-texto: #4a4a4a;
+  --mk-texto-suave: #6b6b6b;
+
+  // Sombras coloridas suaves (nunca cinza puro)
+  --mk-sombra-rosa: 0 10px 24px -8px rgba(238, 109, 140, 0.45);
+  --mk-sombra-azul: 0 10px 24px -8px rgba(146, 201, 234, 0.5);
+  --mk-sombra-suave: 0 6px 16px -6px rgba(74, 74, 74, 0.18);
+
+  // Tipografia
+  --mk-fonte-titulo: 'Baloo 2', 'Fredoka', ui-rounded, system-ui, sans-serif;
+  --mk-fonte-corpo: 'Nunito', 'Quicksand', system-ui, sans-serif;
+
+  // Espaçamento base fluido
+  --mk-secao-py: clamp(2.5rem, 6vw, 5.5rem);
+  --mk-conteudo-largura: 1200px;
+
+  // Camadas
+  --mk-z-header: 40;
+  --mk-z-fab: 50;
+  --mk-z-ornamento: 1;
+  --mk-z-conteudo: 2;
+
+  // Duração de transições (desligadas via prefers-reduced-motion em _base.scss)
+  --mk-duracao-curta: 180ms;
+  --mk-duracao-media: 320ms;
+
+  color-scheme: light;
+}

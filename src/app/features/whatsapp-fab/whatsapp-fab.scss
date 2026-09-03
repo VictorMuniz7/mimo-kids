@@ -1,0 +1,75 @@
+:host {
+  position: fixed;
+  right: clamp(1rem, 3vw, 1.75rem);
+  bottom: clamp(1rem, 3vw, 1.75rem);
+  z-index: var(--mk-z-fab);
+}
+
+.fab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--mk-verde-forte);
+  color: #fff;
+  box-shadow: var(--mk-sombra-azul);
+  text-decoration: none;
+}
+
+.fab__pulso {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--mk-verde-forte);
+  opacity: 0.55;
+  z-index: -1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fab__pulso {
+    animation: mk-ping 2.2s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
+  }
+}
+
+@keyframes mk-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+.fab__tooltip {
+  position: absolute;
+  right: calc(100% + 0.75rem);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--mk-branco);
+  color: var(--mk-texto);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  box-shadow: var(--mk-sombra-suave);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--mk-duracao-media) ease;
+}
+
+.fab:hover .fab__tooltip,
+.fab:focus-visible .fab__tooltip {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .fab__tooltip {
+    display: none;
+  }
+}

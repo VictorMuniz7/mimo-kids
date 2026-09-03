@@ -1,0 +1,63 @@
+.atendimento__grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.atendimento__card {
+  padding: clamp(1.5rem, 3vw, 2rem);
+
+  h3 {
+    font-family: var(--mk-fonte-titulo);
+    color: var(--mk-verde-texto);
+    font-size: 1.2rem;
+    margin-bottom: 0.85rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5em;
+
+    svg {
+      flex-shrink: 0;
+      margin-top: 0.3em;
+    }
+  }
+}
+
+.atendimento__endereco {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.atendimento__nota {
+  font-size: 0.9rem;
+  color: var(--mk-texto-suave);
+  margin: 0;
+}
+
+.atendimento__pagamentos li {
+  padding: 0.35em 0.75em;
+  background: var(--mk-creme-2);
+  border-radius: 999px;
+  width: fit-content;
+  font-weight: 600;
+}
+
+.atendimento__convite {
+  max-width: 62ch;
+  margin-inline: auto;
+  text-align: center;
+  font-family: var(--mk-fonte-titulo);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
+  color: var(--mk-rosa-texto);
+}

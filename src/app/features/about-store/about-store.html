@@ -1,0 +1,42 @@
+<section id="sobre" class="secao sobre">
+  <div class="container sobre__grid">
+    <div class="sobre__texto" mkReveal>
+      <h2>Um espacinho feito com muito carinho</h2>
+      <p>
+        A Mimo Kids está chegando em Sarandi/PR para ser aquele cantinho gostoso de visitar: um novo espaço pensado
+        para vestir os pequenos com conforto, qualidade e muito carinho, do primeiro macacãozinho às aventuras dos 12
+        anos.
+      </p>
+      <p>
+        <mk-heart [size]="18" color="--mk-verde" /> Aqui você encontra moda infantil completa e tudo que acompanha a
+        rotina do bebê — pensado por gente que ama receber bem cada família.
+      </p>
+    </div>
+
+    <div class="sobre__foto" mkReveal [mkRevealDelay]="120">
+      <!--
+        TROCAR: foto da fachada da loja.
+        Quando a foto estiver disponível, substitua o bloco `.sobre__foto-placeholder`
+        abaixo por algo como:
+
+        <picture>
+          <source type="image/webp" srcset="assets/img/fachada-loja-480.webp 480w, assets/img/fachada-loja-960.webp 960w" sizes="(max-width: 860px) 90vw, 480px" />
+          <img
+            src="assets/img/fachada-loja-480.webp"
+            width="960" height="720"
+            alt="Fachada da loja Mimo Kids em Sarandi/PR"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+
+        Gere os dois tamanhos (480w/960w) em WebP e ajuste width/height para as
+        dimensões reais da foto — mantenha a proporção para não gerar CLS.
+      -->
+      <div class="sobre__foto-placeholder moldura-tracejada">
+        <mk-icon-camera [size]="52" />
+        <p>Foto da nossa loja em breve 💛</p>
+      </div>
+    </div>
+  </div>
+</section>

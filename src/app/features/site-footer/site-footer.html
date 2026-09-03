@@ -1,0 +1,29 @@
+<footer class="rodape">
+  <mk-wave-divider color="--mk-azul" edge="bottom" [height]="80" />
+
+  <div class="container rodape__inner">
+    <img
+      class="rodape__logo"
+      src="assets/img/logo-mimo-kids-480.webp"
+      width="1708"
+      height="1505"
+      alt="Mimo Kids"
+      loading="lazy"
+      decoding="async"
+    />
+
+    <nav class="rodape__social" aria-label="Redes sociais">
+      <a [href]="loja.instagram.url" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Mimo Kids (abre em nova aba)">
+        <mk-icon-instagram [size]="22" />
+        <span>{{ loja.instagram.usuario }}</span>
+      </a>
+      <a [href]="whatsappUrl" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Mimo Kids (abre em nova aba)">
+        <mk-icon-whatsapp [size]="22" />
+        <span>{{ loja.whatsapp.numeroFormatado }}</span>
+      </a>
+    </nav>
+
+    <p class="rodape__cidade">{{ loja.cidadeEstado }}</p>
+    <p class="rodape__copy">© {{ ano }} {{ loja.nome }} — {{ loja.cidadeEstado }}</p>
+  </div>
+</footer>

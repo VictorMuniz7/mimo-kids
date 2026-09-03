@@ -1,0 +1,32 @@
+.contador {
+  display: flex;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  justify-content: center;
+}
+
+.contador__bloco {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4.2rem;
+  padding: 0.6rem 0.4rem;
+  background: var(--mk-branco);
+  border-radius: 1.1rem;
+  box-shadow: var(--mk-sombra-rosa);
+}
+
+.contador__valor {
+  font-family: var(--mk-fonte-titulo);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem);
+  color: var(--mk-rosa-texto);
+  font-variant-numeric: tabular-nums;
+}
+
+.contador__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--mk-texto-suave);
+}

@@ -1,0 +1,18 @@
+// Fontes auto-hospedadas (sem Google Fonts via <link> — sem terceiro no caminho crítico).
+// Cada arquivo cobre um intervalo de pesos (fonte variável servida pelo Google Fonts
+// para o subconjunto "latin", suficiente para português do Brasil).
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: swap;
+  src: url('./fonts/baloo2-700-800.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('./fonts/nunito-400-700.woff2') format('woff2');
+}
